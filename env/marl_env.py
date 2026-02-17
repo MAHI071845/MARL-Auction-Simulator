@@ -33,17 +33,18 @@ class AuctionMARL(AECEnv):
             for agent in self.possible_agents
         }
 
-    # Required functions
     def observation_space(self, agent):
         return self.observation_spaces[agent]
 
     def action_space(self, agent):
         return self.action_spaces[agent]
 
-    # Reset environment
+    # ---------------- RESET ----------------
     def reset(self, seed=None, options=None):
+
         self.agents = self.possible_agents[:]
         self.budgets = {a: 100 for a in self.agents}
+        self.team_value = {a: 0 for a in self.agents}
 
         self.rewards = {a: 0 for a in self.agents}
         self._cumulative_rewards = {a: 0 for a in self.agents}
@@ -55,21 +56,22 @@ class AuctionMARL(AECEnv):
         self._agent_selector = agent_selector(self.agents)
         self.agent_selection = self._agent_selector.next()
 
-    # Safe observation
+    # ---------------- OBSERVE ----------------
     def observe(self, agent):
+
         if self.idx >= len(self.players):
             return np.zeros(3, dtype=np.float32)
 
         player = self.players.iloc[self.idx]
+
         return np.array(
             [player.rating, player.base_price, self.budgets[agent]],
             dtype=np.float32,
         )
 
-    # Step function
+    # ---------------- STEP ----------------
     def step(self, action):
 
-        # If auction finished
         if self.idx >= len(self.players):
             return
 
@@ -78,11 +80,22 @@ class AuctionMARL(AECEnv):
 
         cost = player.base_price + action * 2
 
+        # -------- Improved Reward --------
         if self.budgets[agent] >= cost:
+
             self.budgets[agent] -= cost
-            reward = player.rating / cost
+            self.team_value[agent] += player.rating
+
+            # Value-for-money reward
+            value_score = player.rating / (cost + 1)
+
+            # Budget efficiency reward
+            budget_penalty = 0.01 * (100 - self.budgets[agent])
+
+            reward = value_score * 10 - budget_penalty
+
         else:
-            reward = -5
+            reward = -5  # overspending penalty
 
         self.rewards[agent] = reward
         self._cumulative_rewards[agent] += reward
@@ -91,9 +104,16 @@ class AuctionMARL(AECEnv):
         if self._agent_selector.is_last():
             self.idx += 1
 
-            # End auction after all agents finished last player
+            # -------- End Auction Bonus --------
             if self.idx >= len(self.players):
+
                 for a in self.agents:
-                    self.terminations[a] = True
+                    team_bonus = self.team_value[a] * 0.05
+                    self._cumulative_rewards[a] += team_bonus
+
+                # Restart auction for continuous training
+                self.idx = 0
+                self.budgets = {a: 100 for a in self.agents}
+                self.team_value = {a: 0 for a in self.agents}
 
         self.agent_selection = self._agent_selector.next()
