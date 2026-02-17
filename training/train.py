@@ -1,5 +1,5 @@
 from stable_baselines3 import PPO
-from auction_env import AuctionEnv
+from env.auction_env import AuctionEnv
 
 env = AuctionEnv()
 

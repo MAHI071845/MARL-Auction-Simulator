@@ -1,5 +1,92 @@
 name,role,rating,base_price
-Player1,Batsman,85,20
-Player2,Bowler,90,25
-Player3,AllRounder,78,15
-Player4,Keeper,82,18
+Rohit Sharma,Batsman,90,20
+Virat Kohli,Batsman,92,22
+Shubman Gill,Batsman,88,18
+KL Rahul,Batsman,87,17
+David Warner,Batsman,89,19
+Jos Buttler,Batsman,91,21
+Faf du Plessis,Batsman,85,15
+Kane Williamson,Batsman,86,16
+Steve Smith,Batsman,88,18
+AB de Villiers,Batsman,93,23
+MS Dhoni,Keeper,85,15
+Rishabh Pant,Keeper,88,18
+Sanju Samson,Keeper,84,14
+Quinton de Kock,Keeper,87,17
+Dinesh Karthik,Keeper,82,12
+Ishan Kishan,Keeper,86,16
+Nicholas Pooran,Keeper,85,15
+Jonny Bairstow,Keeper,87,17
+Devon Conway,Keeper,86,16
+Alex Carey,Keeper,83,13
+Hardik Pandya,AllRounder,90,20
+Ben Stokes,AllRounder,92,22
+Ravindra Jadeja,AllRounder,89,19
+Glenn Maxwell,AllRounder,88,18
+Andre Russell,AllRounder,91,21
+Shakib Al Hasan,AllRounder,87,17
+Moeen Ali,AllRounder,85,15
+Marcus Stoinis,AllRounder,84,14
+Mitchell Marsh,AllRounder,86,16
+Cameron Green,AllRounder,88,18
+Pat Cummins,Bowler,89,19
+Jasprit Bumrah,Bowler,93,23
+Mohammed Shami,Bowler,90,20
+Bhuvneshwar Kumar,Bowler,86,16
+Trent Boult,Bowler,88,18
+Josh Hazlewood,Bowler,89,19
+Kagiso Rabada,Bowler,91,21
+Anrich Nortje,Bowler,87,17
+Mitchell Starc,Bowler,92,22
+Shaheen Afridi,Bowler,90,20
+Yuzvendra Chahal,Bowler,88,18
+Rashid Khan,Bowler,93,23
+Kuldeep Yadav,Bowler,86,16
+Adam Zampa,Bowler,87,17
+Wanindu Hasaranga,Bowler,89,19
+Sunil Narine,Bowler,88,18
+Varun Chakravarthy,Bowler,85,15
+Ravichandran Ashwin,Bowler,87,17
+Axar Patel,Bowler,86,16
+Washington Sundar,Bowler,84,14
+Tilak Varma,Batsman,83,13
+Ruturaj Gaikwad,Batsman,87,17
+Prithvi Shaw,Batsman,82,12
+Devdutt Padikkal,Batsman,84,14
+Sai Sudharsan,Batsman,83,13
+Yashasvi Jaiswal,Batsman,88,18
+Rahmanullah Gurbaz,Batsman,85,15
+Harry Brook,Batsman,86,16
+Liam Livingstone,Batsman,88,18
+Kyle Mayers,Batsman,84,14
+Rahul Tripathi,Batsman,85,15
+Nitish Rana,Batsman,84,14
+Shreyas Iyer,Batsman,87,17
+Suryakumar Yadav,Batsman,91,21
+Tim David,Batsman,85,15
+Shimron Hetmyer,Batsman,86,16
+Deepak Hooda,AllRounder,83,13
+Krunal Pandya,AllRounder,84,14
+Daniel Sams,AllRounder,82,12
+Jason Holder,AllRounder,85,15
+Dwayne Bravo,AllRounder,86,16
+Chris Jordan,AllRounder,84,14
+Shardul Thakur,AllRounder,85,15
+Venkatesh Iyer,AllRounder,86,16
+Romario Shepherd,AllRounder,83,13
+Andre Fletcher,AllRounder,82,12
+Harshal Patel,Bowler,87,17
+Umran Malik,Bowler,86,16
+T Natarajan,Bowler,85,15
+Avesh Khan,Bowler,84,14
+Deepak Chahar,Bowler,86,16
+Arshdeep Singh,Bowler,87,17
+Lockie Ferguson,Bowler,88,18
+Mark Wood,Bowler,89,19
+Mustafizur Rahman,Bowler,85,15
+Alzarri Joseph,Bowler,86,16
+Kuldip Sen,Bowler,82,12
+Prasidh Krishna,Bowler,87,17
+Jaydev Unadkat,Bowler,83,13
+Navdeep Saini,Bowler,82,12
+Mohsin Khan,Bowler,84,14
